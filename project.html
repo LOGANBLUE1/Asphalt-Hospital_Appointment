@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: rgb(189, 189, 220);
+        color: black;
+        font-family: "Poppins", sans-serif;
+      }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 70px;
+        background-color: rgb(126, 126, 220);
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        list-style: none;
+        margin: 0 23px;
+        color: white;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+      }
+      nav ul li a:hover {
+        text-decoration: none;
+        color: pink;
+        font-size: 1.04rem;
+      }
+      main hr {
+        background-color: #8c76ce;
+        border: 0;
+        height: 1px;
+        margin: 40px 80px;
+      }
+      .left {
+        font-size: 2rem;
+      }
+      .left-panel {
+        width: 200px;
+        background-color: rgb(165, 165, 220);
+        color: white;
+        padding: 10px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .left-panel ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+      }
+      .left-panel li {
+        list-style: none;
+        margin: 20px 0;
+      }
+      .left-panel li a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.2rem;
+      }
+      .left-panel li a:hover {
+        text-decoration: none;
+        color: pink;
+      }
+      .content {
+        margin-left: 250px;
+        padding: 20px;
+      }
+      .content h2 {
+        margin-top: 0;
+      }
+      .content p {
+        margin-top: 0;
+      }
+      .content .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">Karan's Portfolio</div>
+      </nav>
+    </header>
+    <div class="left-panel">
+      <ul>
+        <li><a href="#" onclick="showContent('home')">Home</a></li>
+        <li><a href="#" onclick="showContent('contact')">Contact</a></li>
+        <li><a href="#" onclick="showContent('information')">Information</a></li>
+        <li><a href="#" onclick="showContent('guide')">Guide</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <div id="home-content">
+        <h2>Home</h2>
+        <p>Welcome to the Home page!</p>
+        <p>This is the home page content. Feel free to explore the other sections.</p>
+      </div>
+      <div id="contact-content" class="hidden">
+        <h2>Contact</h2>
+        <p>Contact information:</p>
+        <ul>
+          <li>Email: contact@example.com</li>
+          <li>Phone: 123-456-7890</li>
+          <li>Address: 123 Main Street, City, Country</li>
+        </ul>
+      </div>
+      <div id="information-content" class="hidden">
+        <h2>Information</h2>
+        <p>Here is some important information:</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet quam a lacus consequat, eget placerat mi lacinia. Nulla facilisi. Sed fringilla risus vel justo finibus condimentum. Ut feugiat consequat erat, non eleifend tortor ultrices vitae. Donec tincidunt orci ac ligula congue convallis. Quisque maximus aliquam convallis. Fusce dignissim placerat metus vel suscipit. Ut non sem eros. Pellentesque semper metus vel lectus sollicitudin lacinia. Aenean venenatis mi id enim finibus, sed congue turpis congue. Fusce ultrices pellentesque quam non aliquam.</p>
+      </div>
+      <div id="guide-content" class="hidden">
+        <h2>Guide</h2>
+        <p>This is a guide section.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor ullamcorper bibendum. Nullam eu elit lobortis, aliquet risus nec, venenatis orci. Mauris pulvinar nunc at ante pretium, et sagittis nisl egestas. Mauris bibendum facilisis scelerisque. Praesent efficitur mauris sit amet ipsum congue, a venenatis neque tincidunt. Nunc vel dolor scelerisque, tristique lorem ut, aliquet risus. Nam vulputate sapien lacus, ut aliquet nunc egestas nec. Donec at urna luctus, euismod elit sed, varius ex. Nullam efficitur, ex non euismod posuere, nunc leo facilisis risus, id aliquet mi tellus eget metus. Vestibulum quis dignissim est. Pellentesque sit amet arcu ipsum. Fusce lacinia enim et tortor posuere, vel suscipit ligula tempus. Donec vitae dapibus sapien.</p>
+      </div>
+    </div>
+
+    <script>
+      function showContent(section) {
+        var sections = ['home', 'contact', 'information', 'guide'];
+
+        for (var i = 0; i < sections.length; i++) {
+          var content = document.getElementById(sections[i] + '-content');
+          if (sections[i] === section) {
+            content.classList.remove('hidden');
+          } else {
+            content.classList.add('hidden');
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
